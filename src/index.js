@@ -38,25 +38,41 @@ const handleSubmission = (planet, left) => {
       break;
     }
   } else {
-    if(document.getElementById("life-exp").value > document.getElementById("age").value){
+    if (document.getElementById("life-exp").value > document.getElementById("age").value) {
       h3.append("Years left on " + planet + ": ");
+
+      switch (planet) {
+      case "Mercury":
+        p.append(window.personObj.onMercuryLeft());
+        break;
+      case "Venus":
+        p.append(window.personObj.onVenusLeft());
+        break;
+      case "Mars":
+        p.append(window.personObj.onMarsLeft());
+        break;
+      case "Jupiter":
+        p.append(window.personObj.onJupiterLeft());
+        break;
+      }
     } else {
       h3.append("Years past life expectancy on " + planet + ": ");
+      switch (planet) {
+      case "Mercury":
+        p.append(window.personObj.onMercuryPast());
+        break;
+      case "Venus":
+        p.append(window.personObj.onVenusPast());
+        break;
+      case "Mars":
+        p.append(window.personObj.onMarsPast());
+        break;
+      case "Jupiter":
+        p.append(window.personObj.onJupiterPast());
+        break;
+      }
     }
-    switch (planet) {
-    case "Mercury":
-      p.append(window.personObj.onMercuryLeft());
-      break;
-    case "Venus":
-      p.append(window.personObj.onVenusLeft());
-      break;
-    case "Mars":
-      p.append(window.personObj.onMarsLeft());
-      break;
-    case "Jupiter":
-      p.append(window.personObj.onJupiterLeft());
-      break;
-    }
+
   }
   document.getElementById("response").append(h3);
   document.getElementById("response").append(p);

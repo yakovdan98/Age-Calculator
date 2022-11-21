@@ -12,22 +12,22 @@ describe('calculate persons age on different planets', () => {
 
   //age on planet
   test('should return age of person on mercury', () => {
-    expect(person.onMercury()).toEqual(95);
+    expect(person.planetAge("mercury")).toEqual(95);
   });
 
   test('should return age of person on venus', () => {
 
-    expect(person.onVenus()).toEqual(37);
+    expect(person.planetAge("venus")).toEqual(37);
   });
 
   test('should return age of person on mars', () => {
 
-    expect(person.onMars()).toEqual(12);
+    expect(person.planetAge("mars")).toEqual(12);
   });
 
   test('should return age of person on jupiter', () => {
 
-    expect(person.onJupiter()).toEqual(1);
+    expect(person.planetAge("jupiter")).toEqual(1);
   });
 
 
