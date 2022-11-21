@@ -1,4 +1,4 @@
-# Language Picker
+# Galactic Age Calculator
 
 ## Contributers
 * Daniel Yakovlev
