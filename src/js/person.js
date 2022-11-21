@@ -13,37 +13,36 @@ export class Person {
 
   planetAge(planet) {
     switch (planet) {
-    case "mercury":
+    case "Mercury":
       return Math.floor(this.age / this.mercConv);
-    case "venus":
+    case "Venus":
       return Math.floor(this.age / this.venusConv);
-    case "mars":
+    case "Mars":
       return Math.floor(this.age / this.marsConv);
-    case "jupiter":
+    case "Jupiter":
       return Math.floor(this.age / this.jupiterConv);
     }
   }
 
+  left(planet) {
+    let convAge = 0;
+    switch (planet) {
+    case "Mercury":
+      convAge =  Math.abs((this.expectancy - this.age)/this.mercConv);
+      break;
+    case "Venus":
+      convAge =  Math.abs((this.expectancy - this.age)/this.venusConv);
+      break;
+    case "Mars":
+      convAge = Math.abs((this.expectancy - this.age)/this.marsConv);
+      break;
+    case "Jupiter":
+      convAge = Math.abs((this.expectancy - this.age)/this.jupiterConv);
+      break;
+    }
+    return Math.floor(convAge);
+  }
   
-  onMercuryLeft(){
-    let convAge =  Math.abs((this.expectancy - this.age)/this.mercConv);
-    return Math.floor(convAge);
-  }
-
-  onVenusLeft(){
-    let convAge =  Math.abs((this.expectancy - this.age)/this.venusConv);
-    return Math.floor(convAge);
-  }
-
-  onMarsLeft(){
-    let convAge =  Math.abs((this.expectancy - this.age)/this.marsConv);
-    return Math.floor(convAge);
-  }
-
-  onJupiterLeft(){
-    let convAge =  Math.abs((this.expectancy - this.age)/this.jupiterConv);
-    return Math.floor(convAge);
-  }
 
   onMercuryPast(){
     let convAge =  Math.abs((this.age - this.expectancy)/this.mercConv);

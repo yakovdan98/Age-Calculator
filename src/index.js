@@ -8,7 +8,7 @@ const createPerson = () => {
   const name = document.getElementById("name").value;
   const age = document.getElementById("age").value;
   const lifeExp = document.getElementById("life-exp").value;
-  window.personObj = new Person(name, age, lifeExp);
+  document.getElementById("response").personObj = new Person(name, age, lifeExp);
 };
 
 const clearResponse = () => {
@@ -23,52 +23,27 @@ const handleSubmission = (planet, left) => {
 
   if (!left) {
     h3.append("Age on " + planet + ": ");
-    switch (planet) {
-    case "Mercury":
-      p.append(window.personObj.onMercury());
-      break;
-    case "Venus":
-      p.append(window.personObj.onVenus());
-      break;
-    case "Mars":
-      p.append(window.personObj.onMars());
-      break;
-    case "Jupiter":
-      p.append(window.personObj.onJupiter());
-      break;
-    }
+    p.append(document.getElementById("response").personObj.planetAge(planet));
+
   } else {
     if (document.getElementById("life-exp").value > document.getElementById("age").value) {
       h3.append("Years left on " + planet + ": ");
+      p.append(document.getElementById("response").personObj.left(planet));
 
-      switch (planet) {
-      case "Mercury":
-        p.append(window.personObj.onMercuryLeft());
-        break;
-      case "Venus":
-        p.append(window.personObj.onVenusLeft());
-        break;
-      case "Mars":
-        p.append(window.personObj.onMarsLeft());
-        break;
-      case "Jupiter":
-        p.append(window.personObj.onJupiterLeft());
-        break;
-      }
     } else {
       h3.append("Years past life expectancy on " + planet + ": ");
       switch (planet) {
       case "Mercury":
-        p.append(window.personObj.onMercuryPast());
+        p.append(document.getElementById("response").personObj.onMercuryPast());
         break;
       case "Venus":
-        p.append(window.personObj.onVenusPast());
+        p.append(document.getElementById("response").personObj.onVenusPast());
         break;
       case "Mars":
-        p.append(window.personObj.onMarsPast());
+        p.append(document.getElementById("response").personObj.onMarsPast());
         break;
       case "Jupiter":
-        p.append(window.personObj.onJupiterPast());
+        p.append(document.getElementById("response").personObj.onJupiterPast());
         break;
       }
     }
