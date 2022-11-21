@@ -55,21 +55,21 @@ describe('calculate persons age on different planets', () => {
   //years lived past expectancy
   test('should return years past life expectancy on mercury', () => {
 
-    expect(oldPerson.onMercuryLeft()).toEqual(20);
+    expect(oldPerson.onMercuryPast()).toEqual(20);
   });
   
   test('should return years past life expectancy on venus', () => {
 
-    expect(oldPerson.onVenusLeft()).toEqual(8);
+    expect(oldPerson.onVenusPast()).toEqual(8);
   });
   
   test('should return years past life expectancy on mars', () => {
 
-    expect(oldPerson.onMarsLeft()).toEqual(2);
+    expect(oldPerson.onMarsPast()).toEqual(2);
   });
   
   test('should return years past life expectancy on jupiter', () => {
 
-    expect(oldPerson.onJupiterLeft()).toEqual(0);
+    expect(oldPerson.onJupiterPast()).toEqual(0);
   });
 });
