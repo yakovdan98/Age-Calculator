@@ -46,4 +46,24 @@ export class Person {
     let convAge =  Math.abs((this.expectancy - this.age)/this.jupiterConv);
     return Math.floor(convAge);
   }
+
+  onMercuryPast(){
+    let convAge =  Math.abs((this.age - this.expectancy)/this.mercConv);
+    return Math.floor(convAge);
+  }
+
+  onVenusPast(){
+    let convAge =  Math.abs((this.age - this.expectancy)/this.venusConv);
+    return Math.floor(convAge);
+  }
+
+  onMarsPast(){
+    let convAge =  Math.abs((this.age - this.expectancy)/this.marsConv);
+    return Math.floor(convAge);
+  }
+
+  onJupiterPast(){
+    let convAge =  Math.abs((this.age - this.expectancy )/this.jupiterConv);
+    return Math.floor(convAge);
+  }
 }
