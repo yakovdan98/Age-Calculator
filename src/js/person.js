@@ -11,22 +11,20 @@ export class Person {
     this.jupiterConv = 11.86;
   }
 
-  onMercury() {
-    return Math.floor(this.age / this.mercConv);
+  planetAge(planet) {
+    switch (planet) {
+    case "mercury":
+      return Math.floor(this.age / this.mercConv);
+    case "venus":
+      return Math.floor(this.age / this.venusConv);
+    case "mars":
+      return Math.floor(this.age / this.marsConv);
+    case "jupiter":
+      return Math.floor(this.age / this.jupiterConv);
+    }
   }
 
-  onVenus(){
-    return Math.floor(this.age / this.venusConv);
-  }
-
-  onMars(){
-    return Math.floor(this.age / this.marsConv);
-  }
-
-  onJupiter(){
-    return Math.floor(this.age / this.jupiterConv);
-  }
-
+  
   onMercuryLeft(){
     let convAge =  Math.abs((this.expectancy - this.age)/this.mercConv);
     return Math.floor(convAge);
